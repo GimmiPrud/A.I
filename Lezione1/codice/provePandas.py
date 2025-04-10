@@ -1,3 +1,4 @@
+import pandas as pd
 
 dict = {
     "name":[
@@ -12,4 +13,10 @@ dict = {
     "age":[26,34,27,26,28,29,26],
     "sex":["male","male","male","male","male","female","female"]
 }
+
+Data = pd.DataFrame(dict)
+print(Data)
+print("-------------")
+
+print(Data.describe())
 
