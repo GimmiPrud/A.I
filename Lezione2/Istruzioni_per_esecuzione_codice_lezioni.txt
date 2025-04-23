@@ -1,0 +1,12 @@
+Assumendo di dedicare al codice delle lezioni la directory per esempio /home/ITS_Academy/Lezioni_IA.1 sulla propria macchina Linux, di seguito i passi per eseguire i file Python di ogni lezione con i componenti dell'Ecosistema Docker per i corsi ITS ICT Academy. Tale ecosistema si assume correttamente installato sulla propria macchina (vedi guida su https://github.com/ITS-ICT-Academy/sw_development):
+
+1. Copiare il file python_requirements.txt definitivo, disponibile su Moodle nella cartella radice del Materiale Didattico del corso e contentente anche il file cha state leggendo, nella directory /home/ITS_Academy/Lezioni_IA.1 sulla propria macchina Linux;
+
+2. Aprire il file .env della cartella "sw-development-main" (contenente l'ecosistema ITS ICT Academy) e dichiarare "USER_BASE_FOLDER=/home/ITS_Academy/Lezioni_IA.1" salvando poi il file;
+
+3. Arrestare eventualmente l'ecosistema ITS ICT Academy (con "docker compose down") e riavviarlo previo build (con "docker compose up --build -d"); 
+
+4. Scompattare il file LezioneN.zip nella directory /home/ITS_Academy/Lezioni_IA.1 sulla propria macchina Linux. Il file LezioneN.zip verrà caricato ed aggiornato su Moodle nella cartella LezioneN presente nella cartella radice del Materiale Didattico del corso. Nel tempo verranno create le directory /home/ITS_Academy/Lezioni_IA.1/Lezione1, /home/ITS_Academy/Lezioni_IA.1/Lezione2.../home/ITS_Academy/Lezioni_IA.1/LezioneN sulla propria macchina Linux.
+
+5. Assicuarandosi di avere l'ecosistema ITS ICT Academy correttamente creato, eseguire il file di codice Python "esempio.py della LezioneN" con il comando "docker exec -it -w /home/LezioneN/codice its_dev python esempio.py". Nota: i file di codice Python sono, per ogni LezioneN, sempre nella sottocartella "codice" di LezioneN.
+Esempio reale: "docker exec -it -w /home/Lezione1/codice its_dev python esercizi.py" esegue gli esercizi della Lezione 1.  
